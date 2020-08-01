@@ -2,6 +2,8 @@ import pyglet
 
 import components
 
+components.Weather(0, 0, 0, 0).update()
+
 display = pyglet.canvas.get_display()
 screens = display.get_screens()
 window = None
@@ -14,12 +16,12 @@ for screen in screens:
 if not window:
     exit()
 
-comps = components.Components(window.width, window.height)
+title = components.Title(0, 0, window.width, window.height)
 
 
 @window.event
 def on_draw():
-    comps.header.draw()
+    title.draw()
 
 
-pyglet.app.run()
+# pyglet.app.run()
